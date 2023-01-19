@@ -1,0 +1,664 @@
+:root{
+    --mainSerif:scotch-display, sans-serif;
+    --mainSansSerif: canada-type-gibson, sans-serif;;
+    --mainRed: rgb(219, 5, 5);
+    --mainOrange: #FF8C00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+h1 {
+  font-family: var(--mainSansSerif);  
+}
+
+h2 { 
+    font-family: var(--mainSerif);
+    font-weight: 900;
+    font-size: 7em; 
+    padding: 0.5em;
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+h3 { 
+    font-family: var(--mainSerif);
+    font-style: italic;
+    font-weight: 900;
+    font-size: 6em; 
+    padding: 0.5em;
+}
+
+p {
+    font-family: var(--mainSansSerif);
+    font-size: 1.5em;
+    font-weight: 100;
+}
+
+#home {
+    width: 70%;
+}
+
+#home > h1 {
+    font-family: var(--mainSansSerif);
+    font-size: 7em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home > h2 {
+    font-family: var(--mainSansSerif);
+    font-size: 2em;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9){
+    .video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9){
+    .video {
+        width: auto;
+        height: 100%;
+    }
+}
+
+#carga {
+  background:#161616;
+  width:100%;
+  height:100vh;
+}
+
+#menu > i {
+    margin: 0.5em;
+    padding: 0.5em;
+    font-size: 1.6em;
+    z-index: 1;
+    
+    text-align: center;
+    transition: all 0.5s;
+    -webkit-transition: all 0.25s;
+    position: fixed;
+    background-color: darkorange;
+    border-radius: 100px;
+    color: white;
+    
+}
+
+#menu > i:hover{
+    background-color: rgb(219, 5, 5);
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin-top: 75px;
+}
+
+li{
+    text-align: center;
+    text-transform: uppercase;
+    height: 70px;
+    line-height: 70px;
+    margin: 15px 0;
+    color: white;
+    font-size: 1.5em;
+    letter-spacing: 0.2em;
+    transition: all 0.25s;
+}
+
+li:hover{
+    color: orange;
+    letter-spacing: 0.3em;
+    font-size: 2em
+}
+
+#lgMenu{
+    width: 400px;
+    height: 100%;
+    top: 0;
+    left: -400px;
+    overflow:hidden;
+    background-color: rgba(0,0,0,0.9);
+    position: fixed;
+    z-index: 11;
+    opacity: 0;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s; 
+}
+
+#lgMenu > ul > li > a {
+    font-family: var(--mainSansSerif); 
+    text-decoration: none;
+    color: white;
+    
+}
+#exit {
+    padding: 0.4em;
+    font-size: 2em;
+    position: fixed;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+#exit:hover{
+    color:#FF9900;
+}
+
+#lgMenu.enter{
+    opacity: 1;
+    left: 0;
+}
+
+header {
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: calc(100vh - 0em);    
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url(../img/0051.png);
+    background-repeat: no-repeat;
+}
+
+
+
+/*MARQUEE*/
+
+.marquee {
+    width: 100%;
+    padding: 0.6em 0;
+    overflow: hidden;
+    white-space: nowrap;
+    
+    background-color: var(--mainOrange);
+    font-family: var(--mainSansSerif);
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.4em;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.marquee > span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 20s linear infinite;
+}
+
+.marquee > span:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+    
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+
+
+
+
+/*QUÉ SOMOS*/
+
+.videobar {
+    width: 100%;
+}
+
+.about {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+}
+
+.about > div > figure > img {
+    width: 20%;
+    height: auto;
+}
+.about > div > figure {
+    display: flex;
+    justify-content: center;
+}
+
+.somos  {
+    width: 70%;
+    padding: 1em;
+    padding-left: 3em;
+}
+
+.somos > h2 {
+    font-family: var(--mainSerif);
+    font-style: italic;
+    font-weight: 900;
+    font-size: 7em; 
+    width: 100%;
+    text-align: center;
+    padding-bottom: 0.5em;
+}
+
+.somos > p {
+    padding-bottom: 0.8em;
+}
+
+.video2 {
+    width: 100%;
+}
+
+
+
+/*PELÍCULAS*/
+.dec {
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dec > h2 {
+    font-size: 5em;
+    color: var(--mainRed);
+    font-weight: 500;
+}
+
+.dec > p {
+    width: 50%;
+    margin-bottom: 1em;
+}
+
+.gal > div > figure > a > img {
+    width: auto;
+    height: 50vh;
+    margin: 0 1em;
+    filter: grayscale(100%);
+}
+
+.gal > div > figure > a > img:hover {
+    filter: grayscale(0%);
+    transition-duration: 0.5s;
+}
+
+.gal > div {
+    display: flex;
+    flex-direction: row;
+    padding-left: 1.7em;
+}
+
+.gal > div > figure > img {
+    width: auto;
+    height: 50vh;
+    margin: 0 1em;
+    filter: grayscale(100%);
+}
+
+.gal > div > figure > img:hover {
+    filter: grayscale(0%);
+    transition-duration: 0.5s;
+}
+
+.gal {
+    overflow-x: scroll; 
+    overflow-y: hidden;
+    margin-bottom: 4em;
+}
+
+.gal > div > figure > p {
+    margin: 0.4em 1em 2em 1em;
+    font-size: 1.3em;
+}
+
+
+/*NEWSLETTER*/
+
+#news {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../img/subscribe.png);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%; 
+    padding: 3em;
+}
+
+#news > h3 {
+    font-size: 4em;
+    color: white;
+}
+
+.box {
+    width: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.box > input {
+   margin: 1em 2em;
+    padding: 0.8em 0.8em;
+    width: 40%;
+    border-radius: 100px;
+    border-style: none;
+    background-color: navajowhite;
+}
+
+#news > div > p {
+    font-family: var(--mainSerif);
+    font-size: 1.4em;
+    font-weight: 00;
+    padding: 0.4em 6em;
+    margin: 2em;
+    background-color: var(--mainRed);
+    border-radius: 100px;
+    text-align: center;
+}
+
+#news > div > p > a {
+    text-decoration: none;
+    color: white;
+    font-style: italic;
+    
+}
+
+#window:target {
+    opacity: 100%;
+    visibility: visible;
+    
+    animation: popup 1000ms;
+}
+
+@keyframes popup {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+  }
+
+
+/*POPUP WINDOW*/
+#window {
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-content: center;
+    align-items: center; 
+    visibility: hidden;
+}
+
+#thanks {
+    width: 100%;
+    height: 80%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    text-align: center;
+}
+
+#thanks > p {
+    font-size: 2em;
+    margin: 0.6em;
+}
+
+#close {
+    margin: 2em 10em;
+    padding: 0.4em;
+}
+
+#close > a {
+    text-decoration: none;
+    color: gray;
+    font-size: 1.3em;
+    font-weight: 900;
+}
+
+
+/*FOOTER*/
+
+ #foot {
+    padding: 2em;
+    margin-bottom: 2em;
+    font-size: 1em;
+    font-family: var(--mainSansSerif);
+    display: flex;
+    justify-content: space-between;
+}
+
+#foot > div  h4 {
+    font-size: 2em;
+    margin-bottom: 0.3em;
+}
+
+.logo > figure > img {
+    height: 14em;
+    width: auto;
+    margin-bottom: 1em;
+}
+
+/*FOOTER 2*/
+
+#foot2 {
+    background-color: darkorange;
+    display: flex;
+    justify-content: space-around;
+}
+
+#foot2 > a > i {
+    color: white;
+    font-size: 2em;
+    padding: 1em;
+}
+
+#foot2 > a > i:hover{
+    color: var(--mainRed);
+    transition: 0.5s;
+}
+
+
+/*FLECHA*/
+
+.flecha > a > i {
+    font-size: 2.5em;
+    color: var(--mainRed);
+    border-radius: 100px;
+    margin: 0.5em;
+}
+
+.flecha {
+    text-align: right;
+    background-color: var(--mainOrange);
+}
+
+
+
+@media only screen and (max-width: 500px) {
+    #home > h1 {
+        font-size: 5em;
+    }
+    
+    #home > h2 {
+        font-size: 1.3em;
+        text-align: left;
+    }
+    
+    #home {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        padding: 0 2em;
+    }
+    
+    .about {
+        flex-direction: column; 
+        height: 100%;
+    }
+    
+    .somos {
+        padding: 0;
+    }
+    
+    .somos > h2 {
+        font-size: 3em;
+        padding: 1em 0;
+        width: 100%;
+    }
+    
+    .somos > p {
+        font-size: 1.2em;
+    }
+    
+    .about > div > figure > img {
+        margin: 4em;
+    }
+    
+    .dec {
+        padding: 0;
+    }
+    
+    .dec > h2 {
+        font-size: 3em;
+    }
+    
+    .dec > p {
+        font-size: 1.2em;
+    }
+    
+    h3 {
+        font-size: 4em;
+    }
+    
+    #galeria > div > figure > img {
+        filter: grayscale(0%);
+    }
+    
+    .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #news > h3 {
+        font-size: 2.5em;
+        text-align: center;
+        padding: 2em 0;
+    }
+    
+    #news > div > p {
+        padding: 0.5em 5em;
+    }
+    
+    .logo > figure > img {
+        font-size: 0.6em;
+    }
+    
+    #foot {
+        padding: 1em;
+    }
+    #foot > .contact > h4,
+    #foot > .legal > h4{
+        font-size: 1.3em;
+    }
+    
+    #foot > .contact > p,
+    #foot > .legal > p{
+        font-size: 1.1em;
+    }
+    
+    .flecha {
+        justify-content: center;
+        display: flex;
+    } 
+}
+
+@media only screen and (max-width: 768px) {
+    
+    #home {
+        padding: 2em
+    }
+    .about {
+        display: flex;
+        flex-direction: column;
+        height: 140%;
+    }
+    
+    .about > div > figure > img {
+        margin: 4em;
+    }
+    
+    .somos > h2 {
+        padding: 1em 0 ;
+        font-size: 4em;
+    }
+    
+    .somos {
+        padding: 0;
+    }
+    
+    .somos > p {
+        font-size: 1.5em;
+    }
+    
+    .dec > p {
+        width: 80%;
+    }
+    
+    #galeria > div > figure > img {
+        filter: grayscale(0%);
+    }
+    
+    .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+    }
+    
+    #news > h3 {
+        text-align: center;
+        padding: 2em 0;
+    }
+    
+    #news > div > p {
+        padding: 0.5em 5em;
+    }
+}
